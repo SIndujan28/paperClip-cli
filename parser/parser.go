@@ -4,12 +4,20 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"log"
 	"os"
 )
 
 //Test export function
 func Test() {
-	w := bufio.NewScanner(os.Stdin)
+	f, err := os.Open("toc.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer f.Close()
+	w := bufio.NewScanner(f)
 	w.Split(func(data []byte, atEOF bool) (int, []byte, error) {
 		trimspace := func(b []byte) []byte {
 			return bytes.TrimSpace(b)
@@ -18,8 +26,8 @@ func Test() {
 			return 0, nil, nil
 		}
 		for i := 0; i < len(data); i++ {
-			if isNumeric(data[i]) {
-				return i + 1, data[:i], nil
+			if data[i] == '#' {
+				return i + 1, trimspace(data[:i]), nil
 			}
 		}
 		if atEOF {
@@ -27,12 +35,9 @@ func Test() {
 		}
 		return 0, nil, nil
 	})
+	var wo []string
 	for w.Scan() {
-		fmt.Println(w.Text())
+		wo = append(wo, w.Text())
 	}
-}
-
-func isNumeric(s byte) bool {
-
-	return true
+	fmt.Println(wo)
 }

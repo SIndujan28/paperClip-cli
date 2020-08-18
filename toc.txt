@@ -1,0 +1,242 @@
+Deep Learning with JavaScript	#1,0,666
+brief contents	#7,66,477
+contents	#9,66,477
+foreword	#15,66,477
+preface	#17,66,477
+acknowledgments	#19,66,477
+about this book	#21,66,477
+	Who should read this book	#21,66,427
+	How this book is organized: A roadmap	#22,57,529
+	About the code	#23,66,458
+	liveBook discussion forum	#23,66,263
+about the authors	#24,57,477
+about the cover illustration	#25,66,477
+Part 1 Motivation and basic concepts	#27,90,523
+	1  Deep learning and JavaScript	#29,78,554
+		1.1 Artificial intelligence, machine learning, neural networks, and deep learning	#32,57,616
+			1.1.1 Artificial intelligence	#32,57,537
+			1.1.2 Machine learning: How it differs from traditional programming	#33,66,555
+			1.1.3 Neural networks and deep learning	#38,57,581
+			1.1.4 Why deep learning? Why now?	#42,57,321
+		1.2 Why combine JavaScript and machine learning?	#44,57,510
+			1.2.1 Deep learning with Node.js	#50,57,266
+			1.2.2 The JavaScript ecosystem	#51,66,243
+		1.3 Why TensorFlow.js?	#53,66,616
+			1.3.1 A brief history of TensorFlow, Keras, and TensorFlow.js	#53,66,551
+			1.3.2 Why TensorFlow.js: A brief comparison with similar libraries	#57,66,616
+			1.3.3 How is TensorFlow.js being used by the world?	#57,66,184
+			1.3.4 What this book will and will not teach you about TensorFlow.js	#58,57,381
+Part 2 A gentle introduction to TensorFlow.js	#61,90,523
+	2  Getting started: Simple linear regression in TensorFlow.js	#63,78,571
+		2.1 Example 1: Predicting the duration of a download using TensorFlow.js	#64,57,464
+			2.1.1 Project overview: Duration prediction	#64,57,320
+			2.1.2 A note on code listings and console interactions	#65,66,219
+			2.1.3 Creating and formatting the data	#66,57,308
+			2.1.4 Defining a simple model	#69,66,389
+			2.1.5 Fitting the model to the training data	#72,57,568
+			2.1.6 Using our trained model to make predictions	#74,57,503
+			2.1.7 Summary of our first example	#75,66,616
+		2.2 Inside Model.fit(): Dissecting gradient descent from example 1	#76,57,616
+			2.2.1 The intuitions behind gradient-descent optimization	#76,57,485
+			2.2.2 Backpropagation: Inside gradient descent	#82,57,616
+		2.3 Linear regression with multiple input features	#85,66,165
+			2.3.1 The Boston Housing Prices dataset	#86,57,509
+			2.3.2 Getting and running the Boston-housing project from GitHub	#87,66,408
+			2.3.3 Accessing the Boston-housing data	#89,66,174
+			2.3.4 Precisely defining the Boston-housing problem	#91,66,557
+			2.3.5 A slight diversion into data normalization	#92,57,305
+			2.3.6 Linear regression on the Boston-housing data	#96,57,394
+		2.4 How to interpret your model	#100,57,477
+			2.4.1 Extracting meaning from learned weights	#100,57,290
+			2.4.2 Extracting internal weights from the model	#101,66,193
+			2.4.3 Caveats on interpretability	#103,66,616
+	3  Adding nonlinearity: Beyond weighted sums	#105,78,554
+		3.1 Nonlinearity: What it is and what it is good for	#106,57,555
+			3.1.1 Building the intuition for nonlinearity in neural networks	#108,57,581
+			3.1.2 Hyperparameters and hyperparameter optimization	#115,66,347
+		3.2 Nonlinearity at output: Models for classification	#118,57,568
+			3.2.1 What is binary classification?	#118,57,263
+			3.2.2 Measuring the quality of binary classifiers: Precision, recall, accuracy, and ROC curves	#122,57,481
+			3.2.3 The ROC curve: Showing trade-offs in binary classification	#125,66,503
+			3.2.4 Binary cross entropy: The loss function for binary classification	#129,66,360
+		3.3 Multiclass classification	#132,57,199
+			3.3.1 One-hot encoding of categorical data	#133,66,428
+			3.3.2 Softmax activation	#135,66,386
+			3.3.3 Categorical cross entropy: The loss function for multiclass classification	#137,66,410
+			3.3.4 Confusion matrix: Fine-grained analysis of multiclass classification	#139,66,568
+	4  Recognizing images and sounds using convnets	#143,78,554
+		4.1 From vectors to tensors: Representing images	#144,57,529
+			4.1.1 The MNIST dataset	#145,66,376
+		4.2 Your first convnet	#146,57,616
+			4.2.1 conv2d layer	#148,57,581
+			4.2.2 maxPooling2d layer	#152,57,616
+			4.2.3 Repeating motifs of convolution and pooling	#153,66,361
+			4.2.4 Flatten and dense layers	#154,57,330
+			4.2.5 Training the convnet	#156,57,581
+			4.2.6 Using a convnet to make predictions	#160,57,419
+		4.3 Beyond browsers: Training models faster using Node.js	#163,66,407
+			4.3.1 Dependencies and imports for using tfjs-node	#163,66,277
+			4.3.2 Saving the model from Node.js and loading it in the browser	#168,57,281
+		4.4 Spoken-word recognition: Applying convnets on audio data	#170,57,161
+			4.4.1 Spectrograms: Representing sounds as images	#171,66,451
+	5  Transfer learning: Reusing pretrained neural networks	#178,66,554
+		5.1 Introduction to transfer learning: Reusing pretrained models	#179,66,516
+			5.1.1 Transfer learning based on compatible output shapes: Freezing layers	#181,66,529
+			5.1.2 Transfer learning on incompatible output shapes: Creating a new model using outputs from the base model	#187,66,516
+			5.1.3 Getting the most out of transfer learning through fine-tuning: An audio example	#200,57,398
+		5.2 Object detection through transfer learning on a convnet	#211,66,616
+			5.2.1 A simple object-detection problem based on synthesized scenes	#212,57,477
+			5.2.2 Deep dive into simple object detection	#213,66,189
+Part 3 Advanced deep learning with TensorFlow.js	#225,90,523
+	6  Working with data	#227,78,554
+		6.1 Using tf.data to manage data	#228,57,204
+			6.1.1 The tf.data.Dataset object	#229,66,494
+			6.1.2 Creating a tf.data.Dataset	#229,66,299
+			6.1.3 Accessing the data in your dataset	#235,66,616
+			6.1.4 Manipulating tfjs-data datasets	#236,57,411
+		6.2 Training models with model.fitDataset	#240,57,436
+		6.3 Common patterns for accessing data	#246,57,616
+			6.3.1 Working with CSV format data	#246,57,525
+			6.3.2 Accessing video data using tf.data.webcam()	#251,66,616
+			6.3.3 Accessing audio data using tf.data.microphone()	#254,57,259
+		6.4 Your data is likely flawed: Dealing with problems in your data	#256,57,216
+			6.4.1 Theory of data	#257,66,373
+			6.4.2 Detecting and cleaning problems with data	#261,66,315
+		6.5 Data augmentation	#268,57,477
+	7  Visualizing data and models	#272,78,554
+		7.1 Data visualization	#273,66,516
+			7.1.1 Visualizing data using tfjs-vis	#273,66,386
+			7.1.2 An integrative case study: Visualizing weather data with tfjs-vis	#281,66,227
+		7.2 Visualizing models after training	#286,57,273
+			7.2.1 Visualizing the internal activations of a convnet	#288,57,490
+			7.2.2 Visualizing what convolutional layers are sensitive to: Maximally activating images	#291,66,341
+			7.2.3 Visual interpretation of a convnet’s classification result	#295,66,292
+	8  Underfitting, overfitting, and the universal workflow of machine learning	#299,78,574
+		8.1 Formulation of the temperature-prediction problem	#300,57,616
+		8.2 Underfitting, overfitting, and countermeasures	#304,57,451
+			8.2.1 Underfitting	#304,57,334
+			8.2.2 Overfitting	#306,57,276
+			8.2.3 Reducing overfitting with weight regularization and visualizing it working	#308,57,616
+		8.3 The universal workflow of machine learning	#313,66,477
+	9  Deep learning fo r sequences and text	#318,66,554
+		9.1 Second attempt at weather prediction: Introducing RNNs	#320,57,616
+			9.1.1 Why dense layers fail to model sequential order	#320,57,538
+			9.1.2 How RNNs model sequential order	#322,57,438
+		9.2 Building deep-learning models for text	#331,66,192
+			9.2.1 How text is represented in machine learning: One-hot and multi-hot encoding	#332,57,260
+			9.2.2 First attempt at the sentiment-analysis problem	#334,57,308
+			9.2.3 A more efficient representation of text: Word embeddings	#336,57,300
+			9.2.4 1D convnets	#338,57,145
+		9.3 Sequence-to-sequence tasks with attention mechanism	#347,66,616
+			9.3.1 Formulation of the sequence-to-sequence task	#347,66,278
+			9.3.2 The encoder-decoder architecture and the attention mechanism	#350,57,542
+			9.3.3 Deep dive into the attention-based encoder-decoder model	#353,66,516
+	10  Generative deep learning	#360,66,554
+		10.1 Generating text with LSTM	#361,66,347
+			10.1.1 Next-character predictor: A simple way to generate text	#361,66,230
+			10.1.2 The LSTM-text-generation example	#363,66,198
+			10.1.3 Temperature: Adjustable randomness in the generated text	#368,57,252
+		10.2 Variational autoencoders: Finding an efficient and structured vector representation of images	#371,66,399
+			10.2.1 Classical autoencoder and VAE: Basic ideas	#371,66,268
+			10.2.2 A detailed example of VAE: The Fashion-MNIST example	#375,66,542
+		10.3 Image generation with GANs	#382,57,555
+			10.3.1 The basic idea behind GANs	#383,66,334
+			10.3.2 The building blocks of ACGAN	#386,57,489
+			10.3.3 Diving deeper into the training of ACGAN	#389,66,163
+			10.3.4 Seeing the MNIST ACGAN training and generation	#392,57,258
+	11  Basics of deep reinforcement learning	#397,78,554
+		11.1 The formulation of reinforcement-learning problems	#399,66,373
+		11.2 Policy networks and policy gradients: The cart-pole example	#402,57,477
+			11.2.1 Cart-pole as a reinforcement-learning problem	#402,57,334
+			11.2.2 Policy network	#404,57,242
+			11.2.3 Training the policy network: The REINFORCE algorithm	#407,66,153
+		11.3 Value networks and Q-learning: The snake game example	#415,66,568
+			11.3.1 Snake as a reinforcement-learning problem	#415,66,490
+			11.3.2 Markov decision process and Q-values	#418,57,458
+			11.3.3 Deep Q-network	#422,57,581
+			11.3.4 Training the deep Q-network	#425,66,555
+Part 4 Summary and closing words	#441,90,523
+	12  Testing, optimizing, and deploying models	#443,78,554
+		12.1 Testing TensorFlow.js models	#444,57,464
+			12.1.1 Traditional unit testing	#445,66,282
+			12.1.2 Testing with golden values	#448,57,464
+			12.1.3 Considerations around continuous training	#450,57,504
+		12.2 Model optimization	#451,66,244
+			12.2.1 Model-size optimization through post-training weight quantization	#452,57,516
+			12.2.2 Inference-speed optimization using GraphModel conversion	#460,57,616
+		12.3 Deploying TensorFlow.js models on various platforms and environments	#465,66,616
+			12.3.1 Additional considerations when deploying to the web	#465,66,459
+			12.3.2 Deployment to cloud serving	#466,57,373
+			12.3.3 Deploying to a browser extension, like Chrome Extension	#467,66,237
+			12.3.4 Deploying TensorFlow.js models in JavaScript-based mobile applications	#469,66,208
+			12.3.5 Deploying TensorFlow.js models in JavaScript-based cross-platform desktop applications	#471,66,460
+			12.3.6 Deploying TensorFlow.js models on WeChat and other JavaScript-based mobile app plugin systems	#473,66,227
+			12.3.7 Deploying TensorFlow.js models on single-board computers	#474,57,165
+			12.3.8 Summary of deployments	#476,57,516
+	13  Summary, conclusions, and beyond	#479,78,554
+		13.1 Key concepts in review	#480,57,451
+			13.1.1 Various approaches to AI	#480,57,386
+			13.1.2 What makes deep learning stand out among the subfields of machine learning	#481,66,616
+			13.1.3 How to think about deep learning at a high level	#481,66,148
+			13.1.4 Key enabling technologies of deep learning	#482,57,386
+			13.1.5 Applications and opportunities unlocked by deep learning in JavaScript	#483,66,420
+		13.2 Quick overview of the deep-learning workflow and algorithms in TensorFlow.js	#484,57,366
+			13.2.1 The universal workflow of supervised deep learning	#484,57,196
+			13.2.2 Reviewing model and layer types in TensorFlow.js: A quick reference	#486,57,210
+			13.2.3 Using pretrained models from TensorFlow.js	#491,66,337
+			13.2.4 The space of possibilities	#494,57,568
+			13.2.5 Limitations of deep learning	#496,57,469
+		13.3 Trends in deep learning	#499,66,616
+		13.4 Pointers for further exploration	#500,57,419
+			13.4.1 Practice real-world machine-learning problems on Kaggle	#500,57,211
+			13.4.2 Read about the latest developments on arXiv	#501,66,516
+			13.4.3 Explore the TensorFlow.js Ecosystem	#501,66,256
+appendix A  Installing tfjs-node-gpu and its dependencies	#503,78,520
+	A.1 Installing tfjs-node-gpu on Linux	#503,78,308
+	A.2 Installing tfjs-node-gpu on Windows	#506,57,429
+appendix B  A quick tutorial of tensors and operations in TensorFlow.js	#508,66,520
+	B.1 Tensor creation and tensor axis conventions	#508,66,253
+		B.1.1 Scalar (rank-0 tensor)	#509,66,241
+		B.1.2 tensor1d (rank-1 tensor)	#511,66,616
+		B.1.3 tensor2d (rank-2 tensor)	#511,66,184
+		B.1.4 Rank-3 and higher-dimensional tensors	#513,66,473
+		B.1.5 The notion of data batches	#514,57,616
+		B.1.6 Real-world examples of tensors	#514,57,186
+		B.1.7 Creating tensors from tensor buffers	#516,57,226
+		B.1.8 Creating all-zero and all-one tensors	#517,66,223
+		B.1.9 Creating randomly valued tensors	#518,57,459
+	B.2 Basic tensor operations	#519,66,305
+		B.2.1 Unary operations	#519,66,175
+		B.2.2 Binary operations	#522,57,379
+		B.2.3 Concatenation and slicing of tensors	#523,66,616
+	B.3 Memory management in TensorFlow.js: tf.dispose() and tf.tidy()	#525,66,145
+	B.4 Calculating gradients	#529,66,503
+glossary	#533,78,554
+index	#545,77,529
+	Numerics	#545,78,466
+	A	#545,78,293
+	B	#546,57,455
+	C	#546,270,616
+	D	#547,279,471
+	E	#548,270,206
+	F	#549,66,494
+	G	#549,66,123
+	H	#550,57,616
+	I	#550,57,460
+	J	#550,270,268
+	K	#550,270,164
+	L	#551,66,571
+	M	#551,279,531
+	N	#552,270,291
+	O	#553,66,441
+	P	#553,66,124
+	Q	#554,57,444
+	R	#554,57,342
+	S	#554,270,267
+	T	#555,279,440
+	U	#558,57,205
+	V	#558,270,563
+	W	#559,66,616
+	X	#559,279,616
+	Y	#559,279,542
+	Z	#559,279,408
