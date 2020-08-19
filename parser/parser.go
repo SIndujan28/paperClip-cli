@@ -9,14 +9,14 @@ import (
 )
 
 //Test export function
-func Test() {
-	f, err := os.Open("toc.txt")
+func Txt() {
 
+	f, err := os.Open("toc.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	defer f.Close()
+
 	w := bufio.NewScanner(f)
 	w.Split(func(data []byte, atEOF bool) (int, []byte, error) {
 		trimspace := func(b []byte) []byte {
@@ -35,7 +35,9 @@ func Test() {
 		}
 		return 0, nil, nil
 	})
+
 	var wo []string
+	
 	for w.Scan() {
 		wo = append(wo, w.Text())
 	}
