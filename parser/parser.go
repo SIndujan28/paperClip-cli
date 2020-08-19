@@ -3,14 +3,13 @@ package parser
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"log"
 	"os"
 )
 
-//Test export function
-func Test() {
-	f, err := os.Open("toc.txt")
+//Fetch function to scrap values from txt file
+func Fetch(path string) []string {
+	f, err := os.Open(path)
 
 	if err != nil {
 		log.Fatal(err)
@@ -39,5 +38,5 @@ func Test() {
 	for w.Scan() {
 		wo = append(wo, w.Text())
 	}
-	fmt.Println(wo)
+	return wo
 }

@@ -7,6 +7,9 @@ import (
 )
 
 func main() {
-	fmt.Println("hello world")
-	parser.Test()
+	filename := "toc.txt"
+	s := parser.Fetch(filename)
+	fmt.Println(s)
+	// kafka.Producer()
+	// parser.Test()
 }
