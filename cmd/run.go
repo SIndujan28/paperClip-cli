@@ -7,17 +7,19 @@ import (
 	"os/exec"
 	"path"
 
+	"github.com/SIndujan28/paperclip/kafka"
 	"github.com/SIndujan28/paperclip/parser"
 )
 
 //Run fn executes mutool cmd
 func Run(bpath string) []string {
+	f := path.Base(bpath)
 	app := "mutool"
 	arg0 := "show"
 	arg1 := bpath
 	arg2 := "outline"
 	// Open the output file
-	outfile, err := os.Create(fmt.Sprintf("%s.txt", path.Base(bpath)))
+	outfile, err := os.Create(fmt.Sprintf("%s.txt", f))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,5 +37,6 @@ func Run(bpath string) []string {
 		log.Fatal(err)
 	}
 	s := parser.Fetch(fmt.Sprintf("%s.txt", f))
+	kafka.Producer(bpath, s)
 	return s
 }
