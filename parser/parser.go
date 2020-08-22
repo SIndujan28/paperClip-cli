@@ -2,9 +2,11 @@ package parser
 
 import (
 	"bufio"
-	"bytes"
+	"fmt"
 	"log"
 	"os"
+	"regexp"
+	"strings"
 )
 
 //Fetch function to scrap values from txt file
@@ -16,27 +18,28 @@ func Fetch(path string) []string {
 	}
 
 	defer f.Close()
-	w := bufio.NewScanner(f)
-	w.Split(func(data []byte, atEOF bool) (int, []byte, error) {
-		trimspace := func(b []byte) []byte {
-			return bytes.TrimSpace(b)
-		}
-		if len(data) == 0 {
-			return 0, nil, nil
-		}
-		for i := 0; i < len(data); i++ {
-			if data[i] == '#' {
-				return i + 1, trimspace(data[:i]), nil
-			}
-		}
-		if atEOF {
-			return len(data), trimspace(data), nil
-		}
-		return 0, nil, nil
-	})
 	var wo []string
-	for w.Scan() {
-		wo = append(wo, w.Text())
+
+	scanner := bufio.NewScanner(f)
+
+	for scanner.Scan() {
+
+		rawLine := strings.Split(scanner.Text(), "#")
+
+		reg, err := regexp.Compile(`\d+(\.\d+)*`)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		cleanLine := strings.TrimSpace(reg.ReplaceAllString(rawLine[0], ""))
+		wo = append(wo, cleanLine)
 	}
+
+	fmt.Println(wo[5], len(wo))
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
 	return wo
 }
