@@ -35,7 +35,7 @@ func Fetch(path string) []string {
 		wo = append(wo, cleanLine)
 	}
 
-	fmt.Println(wo[5], len(wo))
+	fmt.Println("Length of keywords", len(wo))
 
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
