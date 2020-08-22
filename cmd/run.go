@@ -38,5 +38,10 @@ func Run(bpath string) []string {
 	}
 	s := parser.Fetch(fmt.Sprintf("%s.txt", f))
 	kafka.Producer(bpath, s)
+
+	err1 := os.Remove(fmt.Sprintf("%s.txt", f))
+	if err1 != nil {
+		log.Fatal(err1)
+	}
 	return s
 }
