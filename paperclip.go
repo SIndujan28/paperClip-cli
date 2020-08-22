@@ -8,11 +8,7 @@ import (
 )
 
 func main() {
-	// q := "Eric Elliott - Composing Software-Leanpub.pdf"
-	// a := cmd.Run(fmt.Sprintf("/home/sindu/test/%s", q), "success")
-	// kafka.Producer(fmt.Sprintf("/home/sindu/test/%s", q), a)
-	// kafka.Producer()
-	// parser.Test()
+
 	textPtr := flag.String("p", "", "path for the book. (Required)")
 	flag.Parse()
 
